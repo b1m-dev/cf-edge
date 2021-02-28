@@ -5,4 +5,4 @@ Determine which Cloudflare edge location you are connected to.
 
 [powershell](https://github.com/b1m-dev/cf-node/blob/main/powershell) does the same, but as it doesn't observe CORS you can use it against any website proxied by Cloudflare.
 
-The 3-letter codes returned can be looked up [here](https://www.cloudflarestatus.com/)
+The 3-letter codes returned can be looked up [here](https://www.cloudflarestatus.com/).

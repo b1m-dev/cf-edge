@@ -1,4 +1,4 @@
-# cf-node
+# cf-edge
 Determine which Cloudflare edge location you are connected to.
 
 [worker](https://github.com/b1m-dev/cf-node/blob/main/worker) is a template for a JavaScript Worker in Cloudflare, due to CORS, you can only test against your own Worker (unless security settings permit)

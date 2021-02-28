@@ -1,0 +1,8 @@
+# Replace URL in line 5 as neccessary - can be your own Worker or any website
+# proxied by Cloudflare
+
+$headers = curl cloudflare.com |
+  select -exp Headers
+$ray = $headers.'CF-RAY'
+$edge = $ray.split('-')[-1]
+$edge

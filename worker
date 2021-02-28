@@ -1,0 +1,28 @@
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myworker.myworkers.workers.dev</title>
+</head>
+<body>
+<p id="edge">You are connected to this Cloudflare Worker running in: </p>
+<script>
+fetch('myworker.myworkers.workers.dev')
+.then(response => {
+  return response.headers.get('CF-RAY');
+}).then(edge => {
+  document.getElementById("edge").innerHTML = "You are connected to this Cloudflare Worker running in: <span style='color: #0000ff'><strong>"+(edge.slice(-3))+"</strong></span>";
+});
+</script>
+</body>
+</html>`
+async function handleRequest(request) {
+  return new Response(html, {
+    headers: {
+      "content-type": "text/html;charset=UTF-8"
+      },
+  })
+}
+addEventListener("fetch", event => {
+  return event.respondWith(handleRequest(event.request))
+})

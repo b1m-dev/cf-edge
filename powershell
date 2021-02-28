@@ -1,5 +1,4 @@
-# Replace URL in line 5 as neccessary - can be your own Worker or any website
-# proxied by Cloudflare
+# Replace URL in line 3 as neccessary - can be your own Worker or any website proxied by Cloudflare
 
 $headers = curl cloudflare.com |
   select -exp Headers

@@ -11,7 +11,7 @@ const html = `<!DOCTYPE html>
 <body>
 <p id="edge">You are connected to this Cloudflare Worker running in: </p>
 <script>
-fetch('myworker.myworkers.workers.dev')
+fetch('myworker.myworkers.workers.dev', {method: 'HEAD'})
 .then(response => {
   return response.headers.get('CF-RAY');
 }).then(edge => {
